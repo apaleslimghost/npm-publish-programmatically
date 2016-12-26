@@ -1,8 +1,12 @@
 const tgzFiles = require('@quarterto/tgz-files');
 const Registry = require('npm-registry-client');
 const promisify = require('@quarterto/promisify');
+const npmlogNoop = require('@quarterto/npmlog-noop');
 
-const client = new Registry();
+const client = new Registry({
+	log: npmlogNoop
+});
+
 client.publish = promisify(client.publish);
 
 module.exports = (files, {auth, registry = 'https://registry.npmjs.com', access = 'public'} = {}) => Promise.resolve().then(() => {
