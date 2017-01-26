@@ -41,7 +41,7 @@ provide your npm auth token. you probably have one in `~/.npmrc`.
 npm registry url. it's probably `https://registry.npmjs.com`, which is the default.
 
 ### `access`
-`public` for public packages (default), `private for private packages`.
+`public` for public packages (default), `private` for private packages.
 
 ## licence
 
