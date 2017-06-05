@@ -16,5 +16,5 @@ module.exports = (files, {auth, registry = 'https://registry.npmjs.com', access 
 	const {name} = metadata;
 	const body = tgzFiles(files, {prefix: 'package'});
 
-	return client.publish(`${registry}/${name}`, {metadata, access, auth, body});
+	return client.publish(`${registry}/${encodeURIComponent(name)}`, {metadata, access, auth, body});
 });
